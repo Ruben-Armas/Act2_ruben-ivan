@@ -60,12 +60,16 @@
     }
 
     function update_user (User $user){
-        // COMPLETAR UPDATE DE USUARIO
+        $sql = "UPDATE user SET username='".$user->getUsername()."', name='".$user->getName()."', surnames='".$user->getSurnames()."', email='".$user->getEmail()."' WHERE id=".$user->getId();
+        $conn = $GLOBALS['conn'];
+        return $conn->query($sql) ;
 
     }
 
     function delete_user ($user_id){
-        // COMPLETAR ELIMINAR DE USUARIO
+        $sql = "DELETE FROM user WHERE id='".$user_id."'";
+        $conn = $GLOBALS['conn'];
+        return $conn->query($sql) ;
 
     }
 
